@@ -60,7 +60,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 .kpi b{display:block;font-family:"Bricolage Grotesque",Arial,sans-serif;font-size:2rem;font-weight:800;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums;margin-bottom:.35em}
 .kpi span{font-size:.92rem;color:var(--muted);line-height:1.4}
 .roles{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:1.2em}
-.roles h3{margin-top:0;font-size:1.25rem;color:var(--ink)}
+.roles h3{margin-top:0;font-size:1.25rem;color:var(--accent)}
 .roles p{margin:0}
 .news{list-style:none;padding:0}
 .news li{display:grid;grid-template-columns:7.5em 1fr;gap:1em;padding:.7em 0;border-bottom:1px solid var(--line);margin:0}
