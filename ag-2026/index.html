@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AG 2026 · APE Mélina Mercouri</title>
+<meta name="description" content="Présentation de l'assemblée générale du 10 septembre 2026 de l'APE Mélina Mercouri, Cadenet.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg:#FBF8F1;        /* papier sable clair, tiré du fond du logo */
+    --ink:#14261C;       /* vert-noir */
+    --muted:#5C6B60;
+    --line:#D9D3C4;
+    --accent:#E8731A;    /* orange des mains du logo */
+    --green:#1E6B3F;     /* vert des feuilles */
+    --sand:#F5D48A;
+    --tag-bg:#FDE9D6;
+    --tag-ink:#9A4A0C;
+    --kbd-bg:#EFEAE0;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#111C15; --ink:#F3EEE2; --muted:#A7B3AA; --line:#2C3A30;
+      --accent:#F5923E; --green:#5CC58A; --sand:#8A6A2A; --tag-bg:#3A2412; --tag-ink:#F5C79A; --kbd-bg:#1E2B22;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#111C15; --ink:#F3EEE2; --muted:#A7B3AA; --line:#2C3A30;
+    --accent:#F5923E; --green:#5CC58A; --sand:#8A6A2A; --tag-bg:#3A2412; --tag-ink:#F5C79A; --kbd-bg:#1E2B22;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+    font-size:clamp(18px,2.2vw,28px);line-height:1.35;
+    overflow:hidden;
+  }
+  h1,h2,h3{font-family:"Bricolage Grotesque","Arial Black",Impact,sans-serif;font-weight:800;line-height:1.02;letter-spacing:-.01em;margin:0;text-wrap:balance}
+  h1{font-size:clamp(44px,8vw,120px)}
+  h2{font-size:clamp(34px,5.4vw,84px)}
+  h3{font-size:clamp(22px,2.6vw,36px);font-weight:700}
+  p{margin:0}
+  .deck{position:relative;height:100%}
+  .slide{
+    position:absolute;inset:0;display:none;
+    padding:clamp(28px,6vh,72px) clamp(28px,7vw,110px);
+    flex-direction:column;justify-content:center;gap:clamp(18px,3.2vh,40px);
+  }
+  .slide.on{display:flex}
+  .eyebrow{font-size:.62em;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+  .lead{font-size:1.15em;max-width:26ch}
+  .muted{color:var(--muted)}
+  .stack{display:flex;flex-direction:column;gap:.55em;max-width:40ch}
+  .stack li{list-style:none}
+  ul.stack{padding:0;margin:0}
+  .rows{display:grid;grid-template-columns:1fr auto;column-gap:1.4em;row-gap:.32em;max-width:34em;align-items:baseline}
+  .rows .n{font-variant-numeric:tabular-nums;font-weight:600;text-align:right;white-space:nowrap}
+  .rows .k{border-bottom:1px solid var(--line);padding-bottom:.28em}
+  .rows .n{border-bottom:1px solid var(--line);padding-bottom:.28em}
+  .rows .k.sum,.rows .n.sum{border-bottom:none;font-weight:700;padding-top:.3em;color:var(--green)}
+  .big{font-family:"Bricolage Grotesque","Arial Black",Impact,sans-serif;font-weight:800;font-size:clamp(64px,13vw,190px);line-height:.95;letter-spacing:-.02em;color:var(--accent);font-variant-numeric:tabular-nums}
+  .big small{display:block;font-family:"Instrument Sans",Arial,sans-serif;font-weight:500;font-size:.2em;letter-spacing:0;color:var(--ink);margin-top:.35em}
+  .tag{display:inline-block;font-size:.55em;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--tag-bg);color:var(--tag-ink);padding:.25em .6em;border-radius:3px;vertical-align:middle}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:start}
+  @media (max-width:760px){.grid2{grid-template-columns:1fr}}
+  .quote{font-family:"Bricolage Grotesque",Arial,sans-serif;font-weight:500;font-size:1.25em;line-height:1.15;max-width:22ch;text-wrap:balance}
+  .quote b{color:var(--accent);font-weight:800}
+  .bar{display:flex;height:10px;width:min(100%,520px);border-radius:2px;overflow:hidden}
+  .bar i{display:block;height:100%}
+  .cal{display:grid;grid-template-columns:auto 1fr;column-gap:1.2em;row-gap:.45em;align-items:baseline;max-width:36em}
+  .cal .d{font-weight:700;color:var(--green);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .foot{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;padding:14px clamp(20px,3vw,40px);font-size:14px;color:var(--muted);pointer-events:none}
+  .foot kbd{font:inherit;background:var(--kbd-bg);border:1px solid var(--line);border-radius:4px;padding:1px 6px}
+  .zone{position:fixed;top:0;bottom:56px;width:22%;cursor:pointer;background:transparent;border:0;padding:0}
+  .zone.l{left:0}.zone.r{right:0}
+  .zone:focus-visible{outline:3px solid var(--accent);outline-offset:-6px}
+  .end{display:flex;gap:.5em;align-items:baseline;flex-wrap:wrap}
+  .contact{font-size:.8em;color:var(--muted);display:flex;flex-direction:column;gap:.15em}
+  @media print{
+    body{overflow:visible;font-size:22px}
+    .deck{height:auto}
+    .slide{position:relative;display:flex;page-break-after:always;height:100vh}
+    .foot,.zone{display:none}
+  }
+  .detail{position:fixed;right:clamp(20px,3vw,40px);bottom:52px;font-size:15px;color:var(--green);text-decoration:none;border-bottom:1px solid var(--green);z-index:2}
+  .detail:hover{color:var(--accent);border-color:var(--accent)}
+</style>
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+  <!-- 1 -->
+  <section class="slide on">
+    <p class="eyebrow">Assemblée générale · jeudi 10 septembre 2026 · foyer rural</p>
+    <h1>APE Mélina Mercouri</h1>
+    <p class="lead">Ce qu'on a fait. Ce qu'on peut faire. Qui vient avec nous.</p>
+    <div class="bar" aria-hidden="true"><i style="width:34%;background:var(--green)"></i><i style="width:33%;background:var(--accent)"></i><i style="width:33%;background:var(--sand)"></i></div>
+  </section>
+
+  <!-- 2 -->
+  <section class="slide">
+    <p class="eyebrow">Au programme</p>
+    <ul class="stack" style="font-size:1.25em">
+      <li>1&nbsp;&nbsp;Bilan 2025-2026</li>
+      <li>2&nbsp;&nbsp;Les comptes</li>
+      <li>3&nbsp;&nbsp;Les parents délégués</li>
+      <li>4&nbsp;&nbsp;2026-2027 avec l'école</li>
+      <li>5&nbsp;&nbsp;Nouveau bureau, puis apéro</li>
+    </ul>
+  </section>
+
+  <!-- 3 -->
+  <section class="slide">
+    <p class="eyebrow">Deux rôles, une même énergie</p>
+    <div class="grid2">
+      <div>
+        <h3>L'APE</h3>
+        <p class="muted">Agit et finance. Des parents bénévoles qui organisent des actions et paient des projets pour tous les enfants. Adhésion 1 €.</p>
+      </div>
+      <div>
+        <h3>Les parents délégués</h3>
+        <p class="muted">Représentent et dialoguent. Élus par tous les parents, ils siègent au conseil d'école face aux enseignants et à la mairie.</p>
+      </div>
+    </div>
+    <p>On peut faire l'un, l'autre, ou les deux.</p>
+  </section>
+
+  <!-- 4 -->
+  <section class="slide">
+    <p class="eyebrow">Bilan 2025-2026 · les actions</p>
+    <a class="detail" href="/2025-2026/">Le détail</a>
+    <div class="rows">
+      <span class="k">Blé de la Sainte-Barbe <span class="muted">(40 kg bio offerts par La Bardane)</span></span><span class="n">860 €</span>
+      <span class="k">Marché de Noël <span class="muted">(crêpes, vin chaud, photos)</span></span><span class="n">418 €</span>
+      <span class="k">Chocolats de Noël et de Pâques</span><span class="n">380 €</span>
+      <span class="k">Kermesse du 23 juin <span class="muted">(tombola 1 500, buvette 536, paella 365, maquillage et danse 104)</span></span><span class="n">2 505 €</span>
+      <span class="k sum">Récolté sur l'année</span><span class="n sum">4 163 €</span>
+    </div>
+    <p class="muted" style="font-size:.7em">Livre de comptes arrêté au 25 juin, plus 300 € de subvention mairie. Chiffres provisoires jusqu'au vote. <span class="tag">provisoire</span></p>
+  </section>
+
+  <!-- 5 -->
+  <section class="slide">
+    <p class="eyebrow">Bilan 2025-2026 · ce que ça a payé</p>
+    <a class="detail" href="/2025-2026/">Le détail</a>
+    <div class="rows">
+      <span class="k">Carnaval du 6 mars : Batucalub dans les rues</span><span class="n">325 €</span>
+      <span class="k">Théâtre d'impro pour les CM2, Cie Limax</span><span class="n">420 €</span>
+      <span class="k">Kermesse : concert live de Crescendo</span><span class="n">500 €</span>
+      <span class="k">Kermesse : paella, buvette, lots, tickets de tombola</span><span class="n">635 €</span>
+      <span class="k">Marché de Noël : courses, vaisselle, tirages</span><span class="n">200 €</span>
+      <span class="k">Assurance MAIF + frais bancaires</span><span class="n">400 €</span>
+    </div>
+    <p class="quote">« <b>La meilleure kermesse depuis des années</b> »<br><span class="muted" style="font-size:.7em">retours parents, 23 et 24 juin</span></p>
+  </section>
+
+  <!-- 6 -->
+  <section class="slide">
+    <p class="eyebrow">Les comptes · au 25 juin 2026</p>
+    <a class="detail" href="/comptes/">Le détail</a>
+    <p class="big">3 917 €<small>en caisse, livret et compte au 25 juin, contre 1 204 € le 11 septembre 2025</small></p>
+    <p class="muted" style="font-size:.75em">Détail présenté par Elodie, trésorière. Recettes 4 463 €, dépenses 2 480 €. <span class="tag">provisoire</span></p>
+  </section>
+
+  <!-- 7 -->
+  <section class="slide">
+    <p class="eyebrow">Les parents délégués · 2025-2026</p>
+    <a class="detail" href="/ecole/">Le détail</a>
+    <ul class="stack">
+      <li><b>18 parents élus</b> le 10 octobre, liste unique. 3 conseils d'école.</li>
+      <li><b>Cantine</b> : courrier signé par 47 parents. Délai d'inscription passé de 5 à 7 jours, période portée à 3 semaines cette rentrée.</li>
+      <li><b>Chaleur</b> : brasseurs d'air dans toutes les classes.</li>
+      <li><b>Harcèlement</b> : dispositif pHARe, boîte aux lettres « Papillon » à la cantine dès septembre.</li>
+      <li><b>Prochaines élections</b> : 9 octobre 2026. Vote électronique à l'étude.</li>
+    </ul>
+  </section>
+
+  <!-- 8 -->
+  <section class="slide">
+    <p class="eyebrow">2026-2027 · avec le directeur et l'équipe</p>
+    <a class="detail" href="/2026-2027/">Le détail</a>
+    <div class="grid2">
+      <div>
+        <h3>Déjà sur la table</h3>
+        <ul class="stack muted" style="font-size:.85em">
+          <li>Tennis pour toutes les classes, CP à CM2 : cofinancement APE + coopérative, ~2 000 €</li>
+          <li>Spectacle pour toute l'école : Cie Mascarille, « Lozen », 1 200 €</li>
+          <li>Nature en classe : Savante Nature, 75 € par classe</li>
+          <li>Théâtre d'impro : Cie Limax, ~1 320 € pour 11 classes</li>
+          <li>Protection de l'enfance : à définir</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Les idées des enseignants</h3>
+        <p class="muted" style="font-size:.85em">L'équipe a plein d'idées, on attend leur liste. <span class="tag">en attente</span></p>
+        <p class="muted" style="font-size:.85em;margin-top:.8em">Cadre : projet d'école 2024-2027, dont « renforcer l'alliance éducative avec les parents ».</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section class="slide">
+    <p class="eyebrow">2026-2027 · le calendrier</p>
+    <a class="detail" href="/2026-2027/">Le détail</a>
+    <div class="cal">
+      <span class="d">9 oct.</span><span>Élections des parents délégués</span>
+      <span class="d">déc.</span><span>Blé de la Sainte-Barbe, marché de Noël, chocolats</span>
+      <span class="d">mars</span><span>Carnaval</span>
+      <span class="d">printemps</span><span>Spectacle ou interventions en classe</span>
+      <span class="d">juin</span><span>Kermesse</span>
+    </div>
+    <p class="muted" style="font-size:.75em">Dates précises à caler avec le directeur. <span class="tag">à caler</span></p>
+  </section>
+
+  <!-- 10 -->
+  <section class="slide">
+    <p class="eyebrow">Nouveau bureau</p>
+    <a class="detail" href="/qui-sommes-nous/#bureau">Le détail</a>
+    <h2>6 postes, 1 an, sans engagement au-delà.</h2>
+    <p class="muted">Président·e, trésorier·e, secrétaire, et leurs adjoints. Tout le monde peut se présenter ce soir.</p>
+  </section>
+
+  <!-- 11 -->
+  <section class="slide">
+    <div class="end"><h1>Apéro.</h1><p class="lead muted">Bulletin d'adhésion à remplir sur place, 1 €.</p></div>
+    <div class="contact">
+      <span>Tout est en ligne : <b>apeprimairecadenet.github.io</b></span>
+      <span>ape.primaire.cadenet@gmail.com</span>
+      <span>Facebook : Ape Mélina Mercouri Cadenet · Instagram : apemelinamercouri</span>
+      <span>Boîte aux lettres « APE » à côté de la porte de l'école</span>
+    </div>
+  </section>
+
+</div>
+
+<button class="zone l" id="prev" aria-label="Slide précédente"></button>
+<button class="zone r" id="next" aria-label="Slide suivante"></button>
+<div class="foot"><span>APE Mélina Mercouri · AG 2026</span><span><span id="ctr">1 / 11</span> &nbsp; <kbd>←</kbd> <kbd>→</kbd></span></div>
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide')),i=0,ctr=document.getElementById('ctr');
+  function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach(function(s,k){s.classList.toggle('on',k===i)});ctr.textContent=(i+1)+' / '+slides.length;try{location.hash=String(i+1)}catch(e){}}
+  var h=parseInt(location.hash.slice(1),10);if(h>0)go(h-1);
+  document.getElementById('next').onclick=function(){go(i+1)};
+  document.getElementById('prev').onclick=function(){go(i-1)};
+  document.addEventListener('keydown',function(e){
+    if(['ArrowRight','ArrowDown',' ','PageDown','Enter'].indexOf(e.key)>-1){e.preventDefault();go(i+1)}
+    else if(['ArrowLeft','ArrowUp','PageUp','Backspace'].indexOf(e.key)>-1){e.preventDefault();go(i-1)}
+    else if(e.key==='Home')go(0);else if(e.key==='End')go(slides.length-1);
+  });
+  var x0=null;document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  document.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50)go(dx<0?i+1:i-1);x0=null});
+})();
+</script>
+</body>
+</html>
