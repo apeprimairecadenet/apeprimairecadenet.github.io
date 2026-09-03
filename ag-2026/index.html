@@ -86,12 +86,14 @@
     .slide{position:relative;display:flex;page-break-after:always;height:100vh}
     .foot,.zone{display:none}
   }
+  .draft{position:fixed;top:14px;right:clamp(20px,3vw,40px);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--tag-bg);color:var(--tag-ink);padding:.35em .7em;border-radius:3px;z-index:3}
   .detail{position:fixed;right:clamp(20px,3vw,40px);bottom:52px;font-size:15px;color:var(--green);text-decoration:none;border-bottom:1px solid var(--green);z-index:2}
   .detail:hover{color:var(--accent);border-color:var(--accent)}
 </style>
 </head>
 <body>
 
+<div class="draft">Brouillon, version de travail avant l'AG</div>
 <div class="deck" id="deck">
 
   <!-- 1 -->
@@ -99,6 +101,7 @@
     <p class="eyebrow">Assemblée générale · jeudi 10 septembre 2026 · foyer rural</p>
     <h1>APE Mélina Mercouri</h1>
     <p class="lead">Ce qu'on a fait. Ce qu'on peut faire. Qui vient avec nous.</p>
+    <p class="muted" style="font-size:.7em">Brouillon : chiffres et projets seront finalisés pour le 10 septembre.</p>
     <div class="bar" aria-hidden="true"><i style="width:34%;background:var(--green)"></i><i style="width:33%;background:var(--accent)"></i><i style="width:33%;background:var(--sand)"></i></div>
   </section>
 
