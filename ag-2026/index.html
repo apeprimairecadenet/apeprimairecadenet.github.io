@@ -86,6 +86,15 @@
     .slide{position:relative;display:flex;page-break-after:always;height:100vh}
     .foot,.zone{display:none}
   }
+  .tl{position:relative;display:grid;grid-template-columns:repeat(12,1fr);gap:.4em;margin-top:.6em;max-width:100%}
+  .tl::before{content:"";position:absolute;left:0;right:0;top:.55em;height:3px;background:var(--line)}
+  .tl .ev{position:relative;padding-top:1.3em;font-size:.55em;line-height:1.2}
+  .tl .ev::before{content:"";position:absolute;top:.1em;left:0;width:.9em;height:.9em;border-radius:50%;background:var(--green);border:3px solid var(--bg)}
+  .tl .ev.big::before{background:var(--accent);width:1.2em;height:1.2em;top:-.05em}
+  .tl .ev b{display:block;color:var(--green);font-weight:700;margin-bottom:.15em}
+  .tl .ev.big b{color:var(--accent)}
+  .tl .ev.big{font-weight:600}
+  @media (max-width:760px){.tl{grid-template-columns:1fr;gap:.3em}.tl::before{display:none}.tl .ev{padding-top:0;padding-left:1.4em}.tl .ev::before{top:.15em}}
   .draft{position:fixed;top:14px;right:clamp(20px,3vw,40px);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--tag-bg);color:var(--tag-ink);padding:.35em .7em;border-radius:3px;z-index:3}
   .detail{position:fixed;right:clamp(20px,3vw,40px);bottom:52px;font-size:15px;color:var(--green);text-decoration:none;border-bottom:1px solid var(--green);z-index:2}
   .detail:hover{color:var(--accent);border-color:var(--accent)}
@@ -131,6 +140,26 @@
       </div>
     </div>
     <p>Deux rôles distincts, deux groupes, des parents motivés. On peut faire l'un, l'autre, ou les deux.</p>
+  </section>
+
+  <!-- 4bis -->
+  <section class="slide">
+    <p class="eyebrow">Bilan 2025-2026 · l'année en un coup d'œil</p>
+    <a class="detail" href="/2025-2026/">Le détail</a>
+    <div class="tl">
+      <div class="ev"><b>11 sept.</b>AG, nouveau bureau</div>
+      <div class="ev"><b>sept.</b>Courrier cantine, 47 parents</div>
+      <div class="ev big"><b>10 oct.</b>Élection des délégués, 18 élus</div>
+      <div class="ev"><b>16 oct.</b>1er conseil d'école</div>
+      <div class="ev"><b>nov.</b>Blé de la Sainte-Barbe</div>
+      <div class="ev big"><b>18 déc.</b>Marché de Noël, chocolats</div>
+      <div class="ev"><b>3 fév.</b>2e conseil d'école</div>
+      <div class="ev big"><b>6 mars</b>Carnaval avec Batucalub</div>
+      <div class="ev"><b>avril</b>Chocolats de Pâques, brasseurs d'air en classe</div>
+      <div class="ev"><b>5 juin</b>3e conseil d'école</div>
+      <div class="ev"><b>juin</b>Concert Crescendo, théâtre d'impro CM2</div>
+      <div class="ev big"><b>23 juin</b>Kermesse</div>
+    </div>
   </section>
 
   <!-- 4 -->
