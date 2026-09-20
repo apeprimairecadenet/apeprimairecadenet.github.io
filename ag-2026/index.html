@@ -57,11 +57,14 @@
   .stack{display:flex;flex-direction:column;gap:.55em;max-width:40ch}
   .stack li{list-style:none}
   ul.stack{padding:0;margin:0}
+  ul.stack.bull li{position:relative;padding-left:1.1em}
+  ul.stack.bull li::before{content:"•";position:absolute;left:0;top:0;color:var(--accent);font-weight:700}
   .rows{display:grid;grid-template-columns:1fr auto;column-gap:1.4em;row-gap:.32em;max-width:34em;align-items:baseline}
   .rows .n{font-variant-numeric:tabular-nums;font-weight:600;text-align:right;white-space:nowrap}
   .rows .k{border-bottom:1px solid var(--line);padding-bottom:.28em}
   .rows .n{border-bottom:1px solid var(--line);padding-bottom:.28em}
   .rows .k.sum,.rows .n.sum{border-bottom:none;font-weight:700;padding-top:.3em;color:var(--green)}
+  .rows .n.det{font-weight:400;color:var(--muted);font-size:.72em;padding-left:.6em}
   .big{font-family:"Bricolage Grotesque","Arial Black",Impact,sans-serif;font-weight:800;font-size:clamp(64px,13vw,190px);line-height:.95;letter-spacing:-.02em;color:var(--accent);font-variant-numeric:tabular-nums}
   .big small{display:block;font-family:"Instrument Sans",Arial,sans-serif;font-weight:500;font-size:.2em;letter-spacing:0;color:var(--ink);margin-top:.35em}
   .tag{display:inline-block;font-size:.55em;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--tag-bg);color:var(--tag-ink);padding:.25em .6em;border-radius:3px;vertical-align:middle}
@@ -98,11 +101,29 @@
   .draft{position:fixed;top:14px;right:clamp(20px,3vw,40px);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--tag-bg);color:var(--tag-ink);padding:.35em .7em;border-radius:3px;z-index:3}
   .detail{position:fixed;right:clamp(20px,3vw,40px);bottom:52px;font-size:15px;color:var(--green);text-decoration:none;border-bottom:1px solid var(--green);z-index:2}
   .detail:hover{color:var(--accent);border-color:var(--accent)}
+  .roles{display:grid;grid-template-columns:1fr 1fr;gap:.8em 1.6em;max-width:46em;margin-top:.4em}
+  .role{display:flex;flex-direction:column;gap:.2em;padding:.7em .9em;border:1.5px solid var(--line);border-radius:10px}
+  .role b{font-size:1.05em;color:var(--accent)}
+  .role span{color:var(--muted);font-size:.72em;line-height:1.25}
+  .role.opt{border-style:dashed}
+  .role .opt-tag{display:inline;color:var(--muted);font-weight:400;font-style:italic;font-size:.72em;opacity:.7}
+  @media (max-width:760px){.roles{grid-template-columns:1fr}}
+  .contact2{display:grid;grid-template-columns:1fr 1fr;gap:1em 2em;max-width:44em;margin-top:.5em}
+  .contact2 .c{display:flex;flex-direction:column;gap:.12em}
+  .contact2 .cl{font-size:.6em;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
+  .contact2 .cv{font-size:.92em;font-weight:500}
+  @media (max-width:760px){.contact2{grid-template-columns:1fr}}
+  .duo{gap:clamp(20px,4vw,56px)}
+  .card{padding:1.2em 1.3em 1.35em;border:1.5px solid var(--line);border-top:5px solid var(--c);border-radius:14px}
+  .card.ape{--c:var(--accent)}
+  .card.del{--c:var(--green)}
+  .card .role-k{display:block;font-family:"Bricolage Grotesque",Arial,sans-serif;font-weight:800;font-size:1.5em;line-height:1;color:var(--c);margin-bottom:.35em}
+  .card .card-lead{font-weight:700;font-size:1.02em;margin-bottom:.4em}
+  .card .muted{font-size:.82em}
 </style>
 </head>
 <body>
 
-<div class="draft">Brouillon, version de travail avant l'AG</div>
 <div class="deck" id="deck">
 
   <!-- 1 -->
@@ -110,7 +131,6 @@
     <p class="eyebrow">Assemblée générale · mardi 22 septembre 2026 · foyer rural</p>
     <h1>APE Mélina Mercouri</h1>
     <p class="lead">Ce qu'on a fait. Ce qu'on peut faire. Qui vient avec nous.</p>
-    <p class="muted" style="font-size:.7em">Brouillon : chiffres et projets seront finalisés pour l'AG.</p>
     <div class="bar" aria-hidden="true"><i style="width:34%;background:var(--green)"></i><i style="width:33%;background:var(--accent)"></i><i style="width:33%;background:var(--sand)"></i></div>
   </section>
 
@@ -122,147 +142,142 @@
       <li>2&nbsp;&nbsp;Les comptes</li>
       <li>3&nbsp;&nbsp;Les parents délégués</li>
       <li>4&nbsp;&nbsp;2026-2027 avec l'école</li>
-      <li>5&nbsp;&nbsp;Nouveau bureau, puis apéro</li>
+      <li>5&nbsp;&nbsp;Vote du nouveau bureau, puis apéro</li>
     </ul>
   </section>
 
   <!-- 3 -->
   <section class="slide">
     <p class="eyebrow">Deux rôles, une même énergie</p>
-    <div class="grid2">
-      <div>
-        <h3>L'APE</h3>
-        <p class="muted">Agit et finance. Des parents bénévoles qui organisent des actions, sportives ou culturelles avec les enseignants, marché de Noël, fête de l'école, pour créer du lien et financer des projets pour les enfants. Adhésion 1 €.</p>
+    <div class="grid2 duo">
+      <div class="card ape">
+        <span class="role-k">L'APE</span>
+        <p class="card-lead">Agit et finance.</p>
+        <p class="muted">Des parents bénévoles qui organisent des actions, sportives ou culturelles avec les enseignants, marché de Noël, fête de l'école, pour créer du lien et financer des projets pour les enfants. Adhésion 1 €.</p>
       </div>
-      <div>
-        <h3>Les parents délégués</h3>
-        <p class="muted">Représentent et dialoguent. Élus par tous les parents le 9 octobre, ils siègent au conseil d'école avec les enseignants et la mairie, et y portent vos questions.</p>
+      <div class="card del">
+        <span class="role-k">Les parents délégués</span>
+        <p class="card-lead">Représentent et dialoguent.</p>
+        <p class="muted">Élus par tous les parents le 9 octobre, ils siègent au conseil d'école avec les enseignants et la mairie, et y portent vos questions.</p>
       </div>
     </div>
-    <p>Deux rôles distincts, deux groupes, des parents motivés. On peut faire l'un, l'autre, ou les deux.</p>
+    <p class="muted" style="font-size:.9em">Deux rôles distincts, deux groupes de parents motivés. On peut faire l'un, l'autre, ou les deux.</p>
   </section>
 
-  <!-- 4bis -->
+  <!-- 4 · Bilan -->
   <section class="slide">
-    <p class="eyebrow">Bilan 2025-2026 · l'année en un coup d'œil</p>
-    <a class="detail" href="/comptes/">Le détail</a>
-    <div class="tl">
-      <div class="ev"><b>11 sept.</b>AG, nouveau bureau</div>
-      <div class="ev"><b>sept.</b>Courrier cantine, 47 parents</div>
-      <div class="ev big"><b>10 oct.</b>Élection des délégués, 18 élus</div>
-      <div class="ev"><b>16 oct.</b>1er conseil d'école</div>
-      <div class="ev"><b>nov.</b>Blé de la Sainte-Barbe</div>
-      <div class="ev big"><b>18 déc.</b>Marché de Noël, chocolats</div>
-      <div class="ev"><b>3 fév.</b>2e conseil d'école</div>
-      <div class="ev big"><b>6 mars</b>Carnaval avec Batucalub</div>
-      <div class="ev"><b>avril</b>Chocolats de Pâques, brasseurs d'air en classe</div>
-      <div class="ev"><b>5 juin</b>3e conseil d'école</div>
-      <div class="ev"><b>juin</b>Concert Crescendo, théâtre d'impro CM2</div>
-      <div class="ev big"><b>23 juin</b>Kermesse</div>
+    <p class="eyebrow">L'année en un coup d'œil</p>
+    <div class="cal" style="font-size:1.15em;row-gap:.7em">
+      <span class="d">nov.</span><span>Blé de la Sainte-Barbe</span>
+      <span class="d">18 déc.</span><span>Marché de Noël, chocolats</span>
+      <span class="d">6 mars</span><span>Carnaval avec Batucalub</span>
+      <span class="d">avril</span><span>Chocolats de Pâques</span>
+      <span class="d">juin</span><span>Théâtre d'impro CM2</span>
+      <span class="d">23 juin</span><span>Kermesse, concert du Son du Glou</span>
     </div>
   </section>
 
-  <!-- 4 -->
+  <!-- 5 · Comptes — bénéfices par action -->
   <section class="slide">
-    <p class="eyebrow">Bilan 2025-2026 · les actions</p>
-    <a class="detail" href="/comptes/">Le détail</a>
-    <div class="rows">
-      <span class="k">Blé de la Sainte-Barbe <span class="muted">(40 kg bio offerts par La Bardane)</span></span><span class="n">860 €</span>
-      <span class="k">Marché de Noël <span class="muted">(crêpes, vin chaud, photos)</span></span><span class="n">418 €</span>
-      <span class="k">Chocolats de Noël et de Pâques</span><span class="n">380 €</span>
-      <span class="k">Kermesse du 23 juin <span class="muted">(espèces 2 492, dont tombola environ 1 500, et paella en ligne 365)</span></span><span class="n">2 857 €</span>
-      <span class="k sum">Récolté par les actions</span><span class="n sum">4 515 €</span>
+    <p class="eyebrow">2 · Les comptes · ce que les actions ont rapporté</p>
+    <div class="rows" style="grid-template-columns:1fr auto auto;max-width:42em">
+      <span class="k">Tombola du 23 juin</span><span class="n">1 442 €</span><span class="n det">(recettes 1 500 € - dépenses 58 €)</span>
+      <span class="k">Kermesse du 23 juin</span><span class="n">780 €</span><span class="n det">(recettes 1 357 € - dépenses 577 €)</span>
+      <span class="k">Blé de la Sainte-Barbe</span><span class="n">860 €</span><span class="n det">(recettes 860 € - dépenses 0 €)</span>
+      <span class="k">Chocolats de Noël et de Pâques</span><span class="n">380 €</span><span class="n det">(bénéfice net des ventes)</span>
+      <span class="k">Marché de Noël</span><span class="n">218 €</span><span class="n det">(recettes 418 € - dépenses 200 €)</span>
+      <span class="k sum" style="grid-column:1 / 2">Bénéfice des actions</span><span class="n sum">3 680 €</span><span class="n sum"></span>
     </div>
-    <p class="muted" style="font-size:.7em">Montants encaissés, avant dépenses. Avec la subvention mairie de 300 €, recettes totales de l'année : 4 815 €. Chiffres soumis au vote. <span class="tag">provisoire</span></p>
   </section>
 
-  <!-- 5 -->
+  <!-- 6 · Comptes — ce qu'on a offert / charges -->
   <section class="slide">
-    <p class="eyebrow">Bilan 2025-2026 · ce que ça a payé</p>
-    <a class="detail" href="/comptes/">Le détail</a>
+    <p class="eyebrow">2 · Les comptes · ce qu'on a offert aux enfants</p>
     <div class="rows">
-      <span class="k">Carnaval du 6 mars : Batucalub dans les rues</span><span class="n">325 €</span>
+      <span class="k">Carnaval du 6 mars : Batucalub</span><span class="n">325 €</span>
       <span class="k">Théâtre d'impro pour les CM2, Cie Limax</span><span class="n">420 €</span>
-      <span class="k">Kermesse : concert live de Crescendo</span><span class="n">500 €</span>
-      <span class="k">Kermesse : paella (cuisinier), courses buvette et jeux, tickets de tombola</span><span class="n">635 €</span>
-      <span class="k">Marché de Noël : courses, vaisselle, tirages</span><span class="n">200 €</span>
-      <span class="k">Assurance MAIF 128 € + frais bancaires 89 €</span><span class="n">217 €</span>
+      <span class="k">Kermesse : concert du Son du Glou</span><span class="n">500 €</span>
+      <span class="k sum">Total</span><span class="n sum">1 245 €</span>
     </div>
-    <p class="quote">« <b>La meilleure kermesse depuis des années</b> »<br><span class="muted" style="font-size:.7em">retours parents, 23 et 24 juin</span></p>
   </section>
 
-  <!-- 6 -->
+  <!-- 7 · Comptes — trésorerie -->
   <section class="slide">
-    <p class="eyebrow">Les comptes · au 5 septembre 2026</p>
-    <a class="detail" href="/comptes/">Le détail</a>
-    <p class="big">3 803 €<small>au 5 septembre 2026 : compte courant 2 716 €, Livret A 1 022 €, caisse 66 €. Contre 1 204 € le 11 septembre 2025 et 3 060 € en septembre 2024.</small></p>
-    <p class="muted" style="font-size:.75em">Détail présenté par Elodie, trésorière. Recettes 4 815 €, dépenses 2 297 €, quelques justificatifs et remboursements de bénévoles restent à arrêter. <span class="tag">provisoire</span></p>
+    <p class="eyebrow">2 · Les comptes · la trésorerie</p>
+    <div class="grid2" style="align-items:center">
+      <p class="big">3 803 €<small>disponible au 5 septembre 2026</small></p>
+      <div>
+        <div class="rows" style="max-width:100%">
+          <span class="k">Compte courant</span><span class="n">2 716 €</span>
+          <span class="k">Livret A</span><span class="n">1 022 €</span>
+          <span class="k">Caisse espèces</span><span class="n">66 €</span>
+          <span class="k sum">Total</span><span class="n sum">3 803 €</span>
+        </div>
+        <p class="muted" style="font-size:.85em;margin-top:1.1em"><b style="color:var(--green)">Depuis sept. 2025 : +2 518 €</b></p>
+      </div>
+    </div>
   </section>
 
-  <!-- 7 -->
+  <!-- 8 · Parents délégués -->
   <section class="slide">
-    <p class="eyebrow">Les parents délégués · 2025-2026</p>
-    <a class="detail" href="/delegues/#ecole">Le détail</a>
-    <ul class="stack">
-      <li><b>18 parents élus</b> le 10 octobre 2025 sur une liste unique, 17 en fonction. 3 conseils d'école.</li>
-      <li><b>Cantine</b> : courrier signé par 47 parents. Délai d'inscription passé de 5 à 7 jours, période portée à 3 semaines cette rentrée.</li>
-      <li><b>Chaleur</b> : brasseurs d'air dans toutes les classes.</li>
-      <li><b>Harcèlement</b> : dispositif pHARe, boîte aux lettres « Papillon » à la cantine dès septembre.</li>
-      <li><b>Prochaines élections</b> : 9 octobre 2026. Vote électronique à l'étude.</li>
-    </ul>
+    <p class="eyebrow">3 · Les parents délégués</p>
+    <h3>Ils représentent tous les parents au conseil d'école, aux côtés des enseignants et de la mairie.</h3>
+    <div class="rows" style="max-width:32em">
+      <span class="k">Titulaires <span class="muted">(un par classe)</span></span><span class="n">10</span>
+      <span class="k">Suppléants <span class="muted">(autant que de titulaires)</span></span><span class="n">jusqu'à 10</span>
+      <span class="k sum">Au total</span><span class="n sum">jusqu'à 20 parents</span>
+    </div>
   </section>
 
   <!-- 8 -->
   <section class="slide">
-    <p class="eyebrow">2026-2027 · avec le directeur et l'équipe</p>
-    <a class="detail" href="/2026-2027/">Le détail</a>
-    <div class="grid2">
-      <div>
-        <h3>Déjà sur la table</h3>
-        <ul class="stack muted" style="font-size:.85em">
-          <li>Tennis pour toutes les classes, CP à CM2 : cofinancement APE + coopérative, ~2 000 €</li>
-          <li>Nature en classe : Savante Nature, 75 € par classe</li>
-          <li>Théâtre d'impro : étendre après l'initiation des CM2 en juin, Cie Limax, ~1 320 € pour toutes les classes</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Les idées des enseignants</h3>
-        <p class="muted" style="font-size:.85em">L'équipe a plein d'idées, on attend leur liste. <span class="tag">en attente</span></p>
-        <p class="muted" style="font-size:.85em;margin-top:.8em">Cadre : projet d'école 2024-2027, dont « renforcer l'alliance éducative avec les parents ».</p>
-      </div>
+    <p class="eyebrow">4 · 2026-2027 · avec le directeur et l'équipe</p>
+    <h3>Déjà sur la table</h3>
+    <div class="rows" style="max-width:32em;font-size:1.1em">
+      <span class="k">Tennis <span class="muted">CP → CM2</span></span><span class="n">2 000 €</span>
+      <span class="k">Théâtre d'impro <span class="muted">CM2</span></span><span class="n">420 €</span>
     </div>
+    <div style="border-left:5px solid var(--green);padding:.15em 0 .15em 1em;max-width:40em">
+      <p style="font-size:.92em">Le directeur préférerait des interventions <b>culturelles ou sportives</b> (plutôt que des spectacles), qui servent de base à une <b>séquence pédagogique</b> en classe.</p>
+    </div>
+    <p class="muted" style="font-size:.8em">D'autres idées à venir avec l'équipe enseignante, financées au fil des actions.</p>
   </section>
 
   <!-- 9 -->
   <section class="slide">
-    <p class="eyebrow">2026-2027 · le calendrier</p>
-    <a class="detail" href="/2026-2027/">Le détail</a>
+    <p class="eyebrow">4 · 2026-2027 · le calendrier</p>
     <div class="cal">
       <span class="d">9 oct.</span><span>Élections des parents délégués</span>
       <span class="d">déc.</span><span>Blé de la Sainte-Barbe, marché de Noël, chocolats</span>
       <span class="d">mars</span><span>Carnaval</span>
-      <span class="d">printemps</span><span>Spectacle ou interventions en classe</span>
+      <span class="d">printemps</span><span>À définir</span>
       <span class="d">juin</span><span>Kermesse</span>
     </div>
-    <p class="muted" style="font-size:.75em">Dates précises à caler avec le directeur. <span class="tag">à caler</span></p>
   </section>
 
   <!-- 10 -->
   <section class="slide">
-    <p class="eyebrow">Nouveau bureau</p>
-    <a class="detail" href="/bureau/">Le détail</a>
-    <h2>6 postes, 1 an, sans engagement au-delà.</h2>
-    <p class="muted">Président·e, trésorier·e, secrétaire, et leurs adjoints. Tout le monde peut se présenter ce soir.</p>
+    <p class="eyebrow">5 · Élection</p>
+    <h2 style="font-size:clamp(30px,4.6vw,64px)">Vote du nouveau bureau</h2>
+    <div class="roles">
+      <div class="role"><b>Président·e</b><span>représente l'association et coordonne l'équipe</span></div>
+      <div class="role opt"><b>Vice-président·e <span class="opt-tag">(optionnel)</span></b><span>seconde et remplace le·la président·e</span></div>
+      <div class="role"><b>Trésorier·e</b><span>tient les comptes et gère la banque</span></div>
+      <div class="role opt"><b>Trésorier·e adjoint·e <span class="opt-tag">(optionnel)</span></b><span>seconde la trésorerie</span></div>
+      <div class="role"><b>Secrétaire</b><span>convocations, comptes rendus, dossiers</span></div>
+      <div class="role opt"><b>Secrétaire adjoint·e <span class="opt-tag">(optionnel)</span></b><span>seconde le secrétariat</span></div>
+    </div>
   </section>
 
   <!-- 11 -->
   <section class="slide">
-    <div class="end"><h1>Apéro.</h1><p class="lead muted">Bulletin d'adhésion à remplir sur place, 1 €.</p></div>
-    <div class="contact">
-      <span>Tout est en ligne : <b>apeprimairecadenet.github.io</b></span>
-      <span>ape.primaire.cadenet@gmail.com</span>
-      <span>Facebook : Ape Mélina Mercouri Cadenet · Instagram : apemelinamercouri</span>
-      <span>Boîte aux lettres « APE » à côté de la porte de l'école</span>
+    <p class="eyebrow">Merci de votre présence</p>
+    <h1>Fin de présentation</h1>
+    <div class="contact2">
+      <div class="c"><span class="cl">Mail</span><span class="cv">ape.primaire.cadenet@gmail.com</span></div>
+      <div class="c"><span class="cl">Boîte aux lettres</span><span class="cv">« APE », à côté de la porte de l'école</span></div>
+      <div class="c"><span class="cl">Facebook</span><span class="cv">Ape Mélina Mercouri Cadenet</span></div>
+      <div class="c"><span class="cl">Instagram</span><span class="cv">apemelinamercouri</span></div>
     </div>
   </section>
 
